@@ -1,7 +1,10 @@
 import React from "react";
-import loginimg from "../../assets/login.jpg";
+import loginimg from "../../assets/auth/login.jpg";
+import AuthButton from "../../components/authbutton/authbtn.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigation = useNavigate();
   return (
     <div className="flex items-center justify-center h-screen ">
       <div className="flex w-full max-w-4xl rounded-2xl bg-white shadow-2xl overflow-hidden">
@@ -11,7 +14,11 @@ const Login = () => {
             Welcome Back!
           </h2>
 
-          <form>
+          <form
+            onSubmit={() => {
+              navigation("/home");
+            }}
+          >
             <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
               Email
             </label>
@@ -36,12 +43,7 @@ const Login = () => {
               </a>
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-lg transition duration-300"
-            >
-              Log in
-            </button>
+            <AuthButton label="Log in" />
           </form>
 
           <div className="my-4 text-center text-gray-400">Or Continue With</div>

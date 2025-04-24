@@ -1,5 +1,6 @@
 import React from "react";
-import signupImg from "../../assets/login.jpg";
+import signupImg from "../../assets/auth/login.jpg";
+import AuthButton from "../../components/authbutton/authbtn.jsx";
 
 const Signup = () => {
   return (
@@ -39,12 +40,7 @@ const Signup = () => {
               placeholder="Create a password"
             />
 
-            <button
-              type="submit"
-              className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-lg transition duration-300"
-            >
-              Sign up
-            </button>
+            <AuthButton label="Sign up" />
           </form>
 
           <p className="text-sm mt-6 text-center">
